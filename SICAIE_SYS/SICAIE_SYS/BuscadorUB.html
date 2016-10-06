@@ -1,0 +1,135 @@
+   
+   
+    <center>
+   <table  width="95%"    ><tr><td>&nbsp;
+  <asp:Label ID="lblNombreUser" runat="server" ></asp:Label>
+  </td><td></td><td align=right> 
+  <div style=" width:250px; border-color:red; border-width:2px;  border-style:solid; padding-right:5px; padding-top:1px;  padding-bottom:2px; "> 
+     
+<form id="searchform">
+ 
+     <input type="text" ID="txtBuscar" onkeypress="return runScript(event)"  style="  width:220px; border-style:none;"    placeholder="Buscar ..." >
+ <input type="button"  UseSubmitBehavior="False"    style="border-style:none; border-width:2px; background-image:url(images/buscar.png);width:20px; height:20px; " value="" onclick="fnBuscar(); "  />
+    </center>  
+ 
+ </form>
+
+         </div>
+   </td></tr></table>
+   
+      <script>
+      function runScript(e) {
+    if (e.keyCode == 13) {
+         fnBuscar();
+        return false;
+    }
+}
+      
+        function txtOnKeyPress(txt1) {
+        if (txt1 != 'undefined') {
+           alert('buscar');
+
+        }
+    }
+        function fnBuscar() {
+if (!( document.getElementById('txtBuscar').value=='' ))
+  
+window.location='BuscarASP.asp?txtBuscar=' + document.getElementById('txtBuscar').value;
+       //   document.getElementById("aspnetForm").action="Buscar.aspx";
+          
+   //document.getElementById("aspnetForm").submit();
+
+        }  
+    
+    </script>
+    
+    <style>
+    #searchform {
+    width: 280px;
+	height:30px;
+    padding: 8px;
+	margin:50px auto;
+    background: #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 2px 0 rgba(255,255,255,.5);
+}
+
+#searchform input {
+    width: 190px;
+	height:20px;
+    padding: 5px;
+    float: left;
+    border: 0;
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.4) inset;
+}
+
+#searchform input:focus {
+    outline: 0;
+	height:21px;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+#searchform input:-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+#searchform input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#searchform input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}    
+
+#searchform button {
+    position: relative;
+    float: right;
+    border: 0;
+    cursor: pointer;
+    height: 30px;
+    width: 80px;
+    font-size:15px;
+    color: #fff;
+    background: green;
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}   
+
+#searchform button:hover{
+    background: #2672e0;
+}	
+
+#searchform button:active,
+#searchform button:focus{
+    background: #2672e0;
+}
+
+#searchform button:before { /* flecha */
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent green transparent;
+    top: 8px;
+    left: -5px;
+}
+
+#searchform button:hover:before{
+    border-right-color: #2672e0;
+}
+
+#searchform button:focus:before{
+    border-right-color: #2672e0;
+}    
+
+ 
+      </style>

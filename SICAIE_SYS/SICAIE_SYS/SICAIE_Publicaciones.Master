@@ -1,0 +1,93 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SICAIE_Publicaciones.master.vb" Inherits="SICAIE_SYS.SICAIE_Publicaciones" %>
+
+<!DOCTYPE html/>
+ 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%--<head id="Head2"><meta http-equiv="X-UA-Compatible" content="IE=edge" /> </head>--%>
+<head id="Head1" runat="server">
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,700' rel='stylesheet' type='text/css'>
+
+<LINK href="css/Style.css" type="text/css" rel="stylesheet"/>
+<LINK href="css/EstilosUB.css" type="text/css" rel="stylesheet"/>
+    <title>Página de la Sub RRHH - MVL</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    
+    </asp:ContentPlaceHolder>
+       
+</head>
+<body  id="BodyPage" runat="server" style="">
+    <form id="form1" runat="server">
+    
+ <table    style:'cellpadding=0 cellspacing=0 width=100%'>
+ <tr class="MVL14_HEADER">
+ <td style:'valign=middle' > 
+    <div  >
+  <a href="PublicacionesUB.aspx"><img src="Imagenes/logo-belgrano_ok.jpg" 
+         alt="Universidad de Belgrano"    />
+        </a> 
+        <br />
+  </div> </td>
+ <td class="style1">&nbsp;</td>
+ <td class="style1"  >  
+     <img alt="" src="Imagenes/logo-belgrano_ok.jpg"  height="60"  /> <br>
+      
+      </td>
+ <td   style = 'position:center'> 
+      <asp:Button          CssClass="LogOutBoton"   onclientclick="if (!confirm('¿Esta seguro que desea salir?')) return false;"  ID="btnSalir" runat="server" Text="Salir"  UseSubmitBehavior="False"  />
+           </td>
+ </tr>
+  <tr> <td colspan=4          style="background-color:white" >    
+           
+           
+<asp:Panel ID="pnlMenuUB" runat="server">
+     
+
+   <!--#INCLUDE file="Buscadorub.html" -->
+            
+ <asp:Panel ID="pnlMenuKiosco" runat="server" visible=false>
+  <!--#INCLUDE file="SubMenuUB.html" -->
+	      </asp:Panel>
+	      
+	   <asp:Panel ID="pnlMenuC" runat="server">
+  <!--#INCLUDE file="MenuUB.html" -->
+	      </asp:Panel>    
+	       
+
+  
+	      
+     </asp:Panel>
+
+        
+        
+  </td>
+   </tr>
+    </table>
+   
+
+      
+<div   style=" "  > 
+   
+    
+    <div    >
+ <br>
+ <div    >
+  <div  >
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+        
+        </asp:ContentPlaceHolder>
+         </div>
+           </div>
+           
+    </div>
+    
+     </div>
+          
+     
+    
+    </form>
+</body>
+
+
+</html>

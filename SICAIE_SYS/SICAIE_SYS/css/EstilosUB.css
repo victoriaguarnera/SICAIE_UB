@@ -1,0 +1,607 @@
+ 
+
+body
+
+   { 
+    background: url(FotoUB.jpg);  background-repeat: no-repeat;
+  width:100%;   background-size:cover;  height:100%;
+
+ 
+}
+
+ .RelevamientoCapacitacionTabla
+        {
+            width: 80%;
+            height: 1px;
+        }
+        .RelevamientoCapacitacionTitulo
+        {
+            font-size: large;
+            font-weight: bold;
+        }
+
+.Contenido
+ {  width: 100%;
+margin-left: auto ;
+margin-right: auto ;
+    
+}
+
+.divChico
+ {  width: 800px;
+ 
+    
+}
+
+.divTextoRelevamiento
+ {  width: 1000px;
+ 
+    
+}
+
+NormativaLink{    
+    /*font-family: Tahoma;*/
+    font-family: 'Raleway',sans-serif;
+      font-size:12px;
+    
+}
+
+.NormativaGrilla{ 
+  background-image:url(images/FondoParrafo.jpg);
+	 
+	  margin-left:50px;
+	   margin-bottom:10px;
+	 /* font-family: Tahoma;*/
+	  font-family: 'Raleway',sans-serif;
+      font-size:12px;
+  
+       color:Black;
+        padding-bottom: 5px;
+         padding-top: 5px;
+          padding-left: 15px;
+          
+}
+.TablaContenido
+ { width:800px 
+}
+.NovedadesArchivo
+{    text-align:left;
+}
+.NovedadesTitulo
+{  font-size:14px;
+  font-weight:bold;
+}
+
+
+
+.EXTramitesTitulo
+{
+background-image:url(images/TituloPaginaFondo.png);
+	  text-align:left;
+	  height:21px;
+	  vertical-align:middle;
+	     padding-bottom:2px;
+	   padding-top:2px;
+	   padding-right:20px;
+	    padding-left:20px;
+	  width:300px;
+}	
+
+.TramitesTitulo
+{
+    
+        font-size:15px;
+	  color:#7ea61f; 
+ /*font-family: @futura;*/
+ font-family: 'Raleway',sans-serif;
+   margin-bottom:10px;
+    font-weight:bold;
+    
+}
+#cs-buttons-games
+{
+display:none;
+}
+.CursosTitulo
+{
+    
+    background-image:url(images/TituloPaginaFondo.png);
+	  text-align:left;
+	  height:21px;
+	  vertical-align:middle;
+	     padding-bottom:2px;
+	   padding-top:2px;
+	   padding-right:20px;
+	    padding-left:20px;
+	  width:300px;
+	    font-size:15px;
+	  color:White;
+ /*font-family:@futura;*/
+ font-family: 'Raleway',sans-serif;
+   margin-bottom:10px;
+}
+.CursosSubTitulo
+{
+    
+    background-image:url(images/TituloPaginaFondo.png);
+	  text-align:left;
+	  height:21px;
+	  vertical-align:middle;
+	     padding-bottom:2px;
+	   padding-top:2px;
+	   padding-right:20px;
+	    padding-left:10px;
+	  width:200px;
+	    font-size:14px;
+	  color:White;
+ /*font-family:@futura;*/
+ font-family: 'Raleway',sans-serif;
+   margin-bottom:10px;
+   }
+
+.Sub-Titulo
+{
+          padding-right:20px;
+	    padding-left:20px;
+	 	    font-size:14px;
+	  color:black;
+ /*font-family:@futura;*/
+ font-family: 'Raleway',sans-serif;
+   margin-bottom:15px;
+     font-weight:bold;  
+}   
+.Titulo
+{
+        font-weight:bold;
+    margin-top:10px;
+	  text-align:left;
+	  height:21px;
+	  vertical-align:middle;
+	     padding-bottom:2px;
+	   padding-top:2px;
+	   padding-right:20px;
+	    padding-left:20px;
+	
+	    font-size:16px;
+	  color:black;
+ /*font-family:@futura;*/
+ font-family: 'Raleway',sans-serif;
+   margin-bottom:5px;
+   font-style:italic; 
+}
+
+.LoginUBTabla
+{
+    width:376px;
+background:white;   
+    
+}
+
+td.LoginUBBordeHor
+{
+	background-image:url(images/LoginUBBorde.png);
+	 width:376px;
+	 height:3px;
+}
+
+td.LoginUBBordeVer{
+	background-image:url(images/LoginUBBorde.png);
+	 width:2px;
+}
+table.LoginUBTabla{
+	  height:180px;
+	 width:376px;
+	 border-spacing:0;
+    border-collapse:collapse;
+	 
+}
+.LoginUBCentro{
+	  
+	 width:370px;
+	 height:113px;
+}
+
+.LoginUBTitulo
+{ 
+/*font-family: Tahoma;*/
+font-family: 'Raleway',sans-serif;
+  font-size:20px;
+  font-weight:bold;
+     text-align:center;
+     height:40px;
+     color:White;
+         
+	   background-color:#bb2a23;
+	   	
+}
+
+.Boton{
+	   border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    background-color:#750000;
+	       color:White;
+	       height:33px;
+	        width:170px;
+	        /*font-family: Tahoma;*/
+	        font-family: 'Raleway',sans-serif;
+       text-transform:uppercase;
+    text-align: center;
+}
+
+.TestingBoton{
+	   border-style: none;
+    border-color: inherit;
+    border-width: 10;
+     border-style:outset;
+    background-color:#750000;
+	       color:White;
+	       height:40px;
+	        width:80px;
+	        /*font-family: Tahoma;*/
+	        font-family: 'Raleway',sans-serif;
+       text-transform:uppercase;
+    text-align: center;
+}
+
+.LoginUBBoton{
+	   background-color:#750000;
+	   color:White;
+	   border:0;
+	    height:20px;
+	    width:80px;
+	    /*font-family: Tahoma;*/
+	    font-family: 'Raleway',sans-serif;
+  text-transform:uppercase;
+ 
+	   	
+}
+
+.LogOutBoton{
+	   background-color:#750000;
+	   color:White;
+	   border:0;
+	    height:15px;
+	    font-size:14px;
+	    /*font-family: Tahoma;*/
+	    font-family: 'Raleway',sans-serif;
+  text-transform:Capitalize;
+  margin-bottom:3px;
+    margin-right:3px;
+	   	
+}
+
+.TextoMision{
+	  background-image:url(images/FondoMision.png);
+	  background-repeat: repeat-y;
+	  margin-left:50px;
+	   margin-bottom:10px;
+	   font-family: 'Raleway',sans-serif; 
+ border: 2px solid green;
+      font-size:12px;
+       text-align:justify;
+       color:Black;
+        padding-bottom: 20px;
+         padding-top: 20px;
+          padding-left: 35px;
+           padding-right: 35px;
+           max-width:90%;
+           position:relative;
+           
+}
+ 
+
+.TextoParrafo{
+	  background-image:url(images/bullet.png);
+	  background-repeat: repeat-y;
+	  margin-left:50px;
+	   margin-bottom:10px;
+	   font-family: 'Raleway',sans-serif; 
+	 font-weight:bold;
+      font-size:12px;
+       text-align:justify;
+       color:Black;
+        padding-bottom: 0px;
+         padding-top: 0px;
+          padding-left: 35px;
+           max-width:95%;
+           position:relative;
+}
+
+.TextoParrafoMAIL{
+	  background-image:url(images/correo-01.png);
+	  background-repeat: no-repeat;
+	  margin-left:50px;
+	   margin-bottom:10px;
+	   font-family: 'Raleway',sans-serif; 
+	    height:30px;
+      font-size:15px;
+       text-align:left;
+       color:Black;
+        padding-bottom: 0px;
+         padding-top: 0px;
+          padding-left: 45px;
+           max-width:95%;
+           position:relative;
+}
+ 
+.TextoParrafoMAIL-DATOS{
+	 
+	  margin-left:50px;
+	   margin-bottom:10px;
+	   font-family: 'Raleway',sans-serif; 
+	    height:30px;
+      font-size:15px;
+       text-align:left;
+       color:Black;
+        padding-bottom: 0px;
+         padding-top: 0px;
+          padding-left: 45px;
+           max-width:95%;
+           position:relative;
+}
+ 
+
+
+
+ .navSubMenuUB ul { background-color:#da0000; height:25px; text-align:center; width:100%  }
+.navSubMenuUB ul > ul{display:none;opacity:0;transition:.3s}
+.navSubMenuUB li{display:inline-block;word-break:break-all;}
+.navSubMenuUB li + li{  margin-left:5px; margin-right:5px; margin-top:3px;}
+.navSubMenuUB li > span{color:white; text-transform:uppercase; font-family: 'Raleway',sans-serif;font-size:15px;text-decoration:none;transition:.26s;  font-weight:bold;}
+ 
+.Separador { background-image: url(images/SeparadorSubMenuUB.png) ; width:10px;   background-repeat:no-repeat; }
+.navSubMenuUB li:hover > ul{display:block;opacity:1}
+
+
+
+ .navTram{ border: 2px solid red ; background-color:white;  text-align:left;  text-transform:capitalize;  }
+ .navTramA{ text-decoration:none;color:black !important;font-family: 'Raleway',sans-serif;font-size:12px !important;padding:  0px 6%;display:block;}
+.navTramA{  background:white;color:black !important}
+ 
+.Preguntas {background:white; margin-top:20px; text-decoration:none;color:#7ea61f !important;font-family: 'Raleway',sans-serif;font-size:12px !important;padding:  0px 6%;display:block;}
+
+ 
+.navMenuUBPrincipal{background:#750000 ; height:25px; text-align:center;  }
+.navMenuUBPrincipal ul > ul{display:none;opacity:0;transition:.3s}
+.navMenuUBPrincipal li{display:inline-block;word-break:break-all;}
+.navMenuUBPrincipal li + li{padding-right:5px;  margin-right:5px; vertical-align:middle;height: 17px;}
+.navMenuUBPrincipal li > a{color:White;font-family: 'Raleway',sans-serif; font-size:13px;text-decoration:none;transition:.26s;}
+.navMenuUBPrincipal li > a:hover{color:gray}
+.navMenuUBPrincipal li {background:#750000;    background-repeat:no-repeat; }
+.navMenuUBPrincipal li:hover > ul{display:block;opacity:1}
+
+.subNavegacion{display:none;cursor:pointer;opacity:0;padding:5px 0 0% 0;position:absolute;transition:.26s;z-index:99;}
+.subNavegacion ul > ul{display:none;opacity:0;transition:.3s}
+.subNavegacion:hover{opacity:1}
+.subNavegacion:before{content:"";height:0;left:5px;position:absolute;top:5px;width:0;z-index:88}
+.subNavegacion li{background:#fff;width:100% !important;display:block !important;padding:0 !important; text-align:left; height:20px; }
+.subNavegacion li > a{color:#750000 !important;font-family: 'Raleway',sans-serif;font-size:11px !important;padding:  0px 6%;display:block;}
+.subNavegacion li > a:hover{background:#750000;color:#fff !important}
+.subNavegacion li:hover > ul {display:block;opacity:1}
+.subNavegacion li > ul {display:none;opacity:1}
+.subNavegacion ul
+{
+   position:relative; /* Esta posición es relativa al <li> que contiene a este <ul> */
+   left:120px; /* Para que no monte sobre el <li> */
+   top:-15px;
+   display:none;
+   list-style:none;
+}
+
+.Institucional{width:100px}
+.Tramites{width:170px}
+.Capacitacion{width:190px}
+
+.barraLateral {list-style:none;}
+.barraLateral:hover{opacity:1}
+.barraLateral:before{content:"";height:0;left:5px;position:absolute;top:5px;width:0;z-index:88}
+.barraLateral li {position:relative;width:150px;}
+.barraLateral li > a{color:#750000 !important;font-family:'Raleway',sans-serif;font-size:11px !important;padding:  0px 6%;display:block;}
+.barraLateral li > a:hover{background:#750000;color:#fff !important}
+
+
+.LinkMail {color:#750000;  font-size:12px; font-weight:bold}  
+.LinkMailempleos {color:#750000;  font-size:16px; font-weight:bold} 
+
+.TextoVerdeOscuro{color:#7ea61f;  font-size:12px;  }
+
+.TextoVerdeClaro{color:#ccd115;  font-size:12px;  }
+
+.GaleriaFotos
+        {
+            width: 200px;
+            height: 170px;
+            
+        }
+ 
+        
+.ClaseTablasAlbum
+        
+        {
+          
+            padding: 5  5 5 5 ;
+           margin: 5 40 00 50;
+           
+            
+        }
+        .GaleriaTitulo {
+            font-size:11px;font-weight:bold;
+          
+            
+        }
+        .GaleriaTablaCelda
+        {
+         padding-right:20px;
+             font-weight:bold;
+              width:400px;
+              align:left;
+              padding-bottom: 20px
+        }
+        
+.TextoGenerico
+{
+font-family: 'Raleway',sans-serif;font-size:14px; text-align:left
+}
+        
+.TextoGenericoNegrito
+{
+font-family: 'Raleway',sans-serif;font-size:16px; text-align:left; font-weight:bold;
+}
+
+span {
+font-family: 'Raleway';
+    text-align: justify;
+}
+
+ 
+.RHCTextoGenericoNegritoItalico
+{
+font-family: 'Raleway','sans-serif';font-size:14px; text-align:left; font-weight:bold; font-style:italic;
+}
+.RHCTextoLabelsGenerales
+{
+font-family: 'Raleway','sans-serif';font-size:14px; text-align:left; 
+}
+
+.RHCTituloNegrito
+{
+font-family: 'Raleway','sans-serif';font-size:16px; text-align:left; font-weight:bold; border-color: Lime; border-width: medium; 
+}
+
+.MVL14_HEADER {
+ background-color:#750000;
+ 
+}
+  
+.MVL14_container_RHCCursos {
+     min-height:80%;
+}
+ 
+.MVL14_container_Inf_RHCCursos {
+    height:70%; 
+   overflow:auto;
+ background-color:white;
+              background: rgb(0, 0, 0) transparent;   
+            background: rgba(255, 255, 255, 0.70);   /* RGBa with 0.6 opacity */
+             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);  /* For IE 5.5 - 7*/
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";  /* For IE 8*/
+  
+   margin-left:50px;
+   margin-right:50px;
+  
+}
+.MVL14_container_Inf_Cont_RHCCursos {
+   
+   opacity:1;
+ 
+}
+
+.MVL14_LoginUB {
+ 
+ background-color:white;
+              background: rgb(0, 0, 0) transparent;   
+            background: rgba(255, 255, 255, 0.80);   /* RGBa with 0.6 opacity */
+             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);  /* For IE 5.5 - 7*/
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";  /* For IE 8*/
+  width:376px;
+   margin-left:50px;
+   margin-right:50px;
+   font-family: 'Raleway','sans-serif';font-size:13px;'
+  
+}
+.DIV_CONTENIDO {
+   min-height:80%;
+   width:90%;
+   
+}
+
+
+.BOTONERA_HOME { /* RE2014 */
+    
+    
+ background-color:white;
+              background: rgb(0, 0, 0) transparent;   
+            background: rgba(255, 255, 255, 0.70);   /* RGBa with 0.6 opacity */
+             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);  /* For IE 5.5 - 7*/
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";  /* For IE 8*/
+  
+   margin-left:50px;
+   margin-right:50px;
+  
+}
+
+.GaleriaAlbum  /* RE2014 */
+        {
+            width: 150px;
+            height: 90px;
+            
+           border-style:solid;
+             border-color:Green;
+              border-width:2px;
+        }
+        
+        
+.PublicacionesUB_MODULO {
+padding-top:20px;
+			padding-left:20px;
+             font-weight:bold;
+                   color:Red;
+     font-size:15px;
+   
+}
+
+.PublicacionesUB_Titulo {
+   font-size:14px;
+   padding-left:25px;
+       font-weight:bold;
+}
+.PublicacionesUB_SubTitulo {
+   font-size:14px;
+
+   padding-left:25px;
+}
+.PublicacionesUB_LINK {  font-weight:bold;
+       color:#7ea61f; 
+        padding-left:25px;
+}
+.PublicacionesUB_TEXTO{
+   font-size:12px;
+
+   padding-left:25px;
+}
+  body
+
+   { margin:0
+    padding:0;
+     background: url(images/fondo-capacitacion-01.jpg);  background-repeat: no-repeat;
+  width:100%;   background-size:cover;  height:100%;
+ 
+}
+
+        .style1
+        {
+            width: 516px;
+            text-align: right;
+             height:80px 
+        }
+        .style2
+        {
+            width: 237px;
+        }
+        
+       .LOGO_CONECTADOS 
+    {
+              margin-left:20px; margin-right:10px ; height:45px
+        }    
+
+.Linea{
+	    
+    color:#750000;
+	      
+}
+
+.tdRaleway {
+font-family: 'Raleway';
+    text-align: justify;
+}
