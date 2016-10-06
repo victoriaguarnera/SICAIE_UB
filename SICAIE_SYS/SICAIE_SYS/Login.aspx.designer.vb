@@ -41,15 +41,6 @@ Partial Public Class Login
     Protected WithEvents txtPwd As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lblError control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''cmdAceptar control.
     '''</summary>
     '''<remarks>
@@ -57,6 +48,15 @@ Partial Public Class Login
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdAceptar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lblError control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''usrDat control.

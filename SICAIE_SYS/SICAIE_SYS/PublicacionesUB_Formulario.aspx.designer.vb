@@ -50,85 +50,22 @@ Partial Public Class PublicacionesUB_Formulario
     Protected WithEvents txtTitulo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lblNombre control.
+    '''lblSubtitulo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblSubtitulo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtNombre control.
+    '''txtSubtitulo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Label3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtTelefono control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtTelefono As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblEmail control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblEmail As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtEmail control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblPrecio control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblPrecio As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtPrecio control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtPrecio As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''trSubir1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents trSubir1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents txtSubtitulo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Label6 control.
@@ -158,6 +95,24 @@ Partial Public Class PublicacionesUB_Formulario
     Protected WithEvents btnSubirFoto As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''ImgFotoNoticia control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ImgFotoNoticia As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''lblCuerpo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCuerpo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''trSubir2 control.
     '''</summary>
     '''<remarks>
@@ -167,58 +122,13 @@ Partial Public Class PublicacionesUB_Formulario
     Protected WithEvents trSubir2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
-    '''Label7 control.
+    '''txtCuerpo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''pnlFotos control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlFotos As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''btnCancelarUltima control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnCancelarUltima As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''pnlFotosEdicion control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlFotosEdicion As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''Repeater1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Repeater1 As Global.System.Web.UI.WebControls.Repeater
-
-    '''<summary>
-    '''lblArchivos control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblArchivos As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtCuerpo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Label8 control.

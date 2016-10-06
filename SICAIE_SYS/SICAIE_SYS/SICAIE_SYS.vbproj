@@ -106,6 +106,7 @@
     <Content Include="css\EstilosUB.css" />
     <Content Include="css\FotoUB.jpg" />
     <Content Include="css\style.css" />
+    <Content Include="Imagenes\default-image.jpg" />
     <Content Include="Imagenes\FotoUB.jpg" />
     <Content Include="Imagenes\gandalf.png" />
     <Content Include="Imagenes\logo-belgrano_ok.jpg" />

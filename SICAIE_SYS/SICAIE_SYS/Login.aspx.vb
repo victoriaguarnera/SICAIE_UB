@@ -37,23 +37,23 @@ Public Class Login
 
         'End Try
 
-        If fnLoginUB(txtUser.Text, txtPwd.Text) Then
-            pnlForm.Visible = False
+        'If fnLoginUB(txtUser.Text, txtPwd.Text) Then
+        pnlForm.Visible = False
 
 
 
 
-            Server.Transfer("PublicacionesUB.aspx")
+        Server.Transfer("PublicacionesUB.aspx")
 
-        Else
-            lblError.Text = "Usuario o contraseña inválida"
-        End If
+        'Else
+        'lblError.Text = "Usuario o contraseña inválida"
+        'End If
 
     End Sub
 
     Function fnLoginUB(ByVal stUser As String, ByVal stPass As String) As Boolean
         Dim stStatus As String = ""
-
+        'Leer campos del hidden field y mandar al nuevo stored
         lblError.Text = ""
         Try
             Dim ds As New DataSet

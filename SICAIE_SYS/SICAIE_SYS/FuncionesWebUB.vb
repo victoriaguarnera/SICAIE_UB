@@ -251,7 +251,13 @@ Public Class FuncionesWebUB
         End If
         Return link
     End Function
-
+    Public Shared Function PDF_KIOSCO()
+        If EsKiosco(System.Web.HttpContext.Current.Session("CANAL")) Then
+            Return "#toolbar=0&navpanes=0"
+        Else
+            Return ""
+        End If
+    End Function
     Public Shared Function TargetCanal(ByVal varCanal As String) As String
         'funcion llamada desde asp
         If EsKiosco(varCanal) Then

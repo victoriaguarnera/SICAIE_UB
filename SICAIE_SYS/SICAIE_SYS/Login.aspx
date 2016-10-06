@@ -23,7 +23,7 @@
 
                <table   cellpadding=0 cellspacing=0 align=center>
                
-                <tr >
+                <!--<tr >
                     <td  align=right style="height:25px"  >
                        Usuario: &nbsp;</td>
                     <td>
@@ -35,11 +35,11 @@
                          Contraseña &nbsp;</td>
                     <td>
                           <asp:TextBox ID="txtPwd"  TextMode="Password" runat="server"></asp:TextBox></td>
-                </tr>
+                </tr>-->
                  <tr>
-                    <td colspan=2 align=center>
-                        <asp:Button ID="cmdAceptar" runat="server" Text="Aceptar" class="LoginUBBoton" ClientIDMode="Static" Visible="false"/>
-                      <!--<a href="enviarclave.aspx" class="LinkMail">Olvide mi Contraseña</a>
+                    <td colspan=2 style="text-align: center;">
+                        <asp:Button ID="cmdAceptar" runat="server" Text="Aceptar" OnClick="cmdAceptar_Click" class="LoginUBBoton" ClientIDMode="Static" Style="display:none;"/>
+                        <!--<a href="enviarclave.aspx" class="LinkMail">Olvide mi Contraseña</a>
                         <asp:Button runat="server" OnClientClick="sarasa(); return false;" Text="Click for sarasa" />-->
                         <div class="g-signin2" data-onsuccess="onSignIn"></div><br>
                        <asp:label ID="lblError" ForeColor=red runat="server"></asp:label> 
@@ -85,9 +85,10 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
         //TODO tarea para el hogar
-        //mandar profile.getEmail() al campo hidden usrDat y llamar a sarasa(); (cambiarle el nombre)
+        //mandar profile.getEmail() al campo hidden usrDat
         //en backcode cambiar logica e cmdAceptar_click, saca data del hidden field
         //if domino not comunidad.ub.edu.ar o ub, signOut(); y escribir alerta en lblerror
+        sarasa();
     }
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
