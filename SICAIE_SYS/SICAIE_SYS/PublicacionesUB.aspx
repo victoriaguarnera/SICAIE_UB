@@ -22,7 +22,7 @@
          <td style="width:80%"; valign="top" align=center>
         <table  style=" min-width:660px;width:90%"  > <tr>
         <td style="background:url(Cartelera/Fondo.png); background-size:cover;      ">
-        <div style=" margin-top:110px; margin-left:30px; min-width:560px;width:90%; height:270px ;overflow:auto;   " >
+        <div style=" margin-top:110px; margin-left:50px; min-width:600px;width:93%; height:600px ;overflow:auto;   " >
     
         <asp:DataList ID="DataList1" runat="server" BorderColor="Black"   borderwidth="0"
              RepeatColumns="1" style="text-align: left"  
@@ -38,14 +38,15 @@
                             <%--<asp:Label ID="lblTitulo0" runat="server" Font-Bold="True" Font-Size="8pt" 
                                 Text="Cualquier consulta comunicarse con:"></asp:Label>--%>
                            <%-- <asp:Image ID="Foto" runat="server"  SRC="Imagenes/"  ></asp:Image>--%>
-                           <img alt="" src= <%# Eval("Foto")%>    />
-                             <br />
+                           
                        
                             <asp:Label ID="lblNombre" runat="server" Font-Bold="True" Font-Size="16pt" 
                                 Text='<%# Eval("Texto_Corto")%>'></asp:Label>
                          <%--   &nbsp;<asp:Label ID="lblTitulo1" runat="server" Font-Bold="True" Font-Size="8pt" 
                                 Text="al "></asp:Label>--%>
                               <br />
+                            <img alt="" src= <%# Eval("Foto")%>   width="75%" />
+                             <br />
                             <asp:Label ID="lblTelefono" runat="server" Font-Bold="True" Font-Size="12pt" 
                                 Text='<%# Eval("Texto_Largo")%>'></asp:Label>
                             <br />
@@ -86,11 +87,11 @@
     </table>
     
     </td> 
-    <td valign=top style="width:126px" align=center> 
-        <input type="button" ID="btnSubir" onclick="window.location='PublicacionesUB_Formulario.aspx';" 
-            value="Subir Novedad" style="width:119px"  class="Boton"/>
-              <input type="button" ID="btnVolver" onclick="window.location = 'Login.aspx';" 
-            value="Volver" style="width:119px"  class="Boton"/>
+    <%--<td valign=top style="width:126px" align=center> 
+        <%--<input type="button" ID="btnSubir" onclick="window.location='PublicacionesUB_Formulario.aspx';" 
+            value="Subir Novedad" style="width:119px"  class="Boton"/>--%>
+            <%--  <input type="button" ID="btnVolver" onclick="window.location = 'Login.aspx';" 
+            value="Volver" style="width:119px"  class="Boton"/>--%--%>>
                 
     </tr> 
     </table>

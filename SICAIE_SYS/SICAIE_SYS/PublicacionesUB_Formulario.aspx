@@ -66,7 +66,10 @@
                                 </tr> 
                                 <tr>
                                     <td colspan="2" style="text-align:center">
-                                        <asp:Image ID="ImgFotoNoticia" width="75%" Src="Imagenes/default-image.jpg" runat="server" />
+                                      
+                                            <asp:Image ID="ImgFotoNoticia" width="75%"  runat="server" />
+
+                                        
                                     </td>
                                 </tr>  
                                 <tr>
@@ -90,10 +93,10 @@
                     
                     <tr>
                         <td>
-                            <asp:Label ID="Label8" runat="server" CssClass="TextoFormulario" Text="Información del Anuncio"></asp:Label>
+                            <%--<asp:Label ID="Label8" runat="server" CssClass="TextoFormulario" Text="Información del Anuncio"></asp:Label>
                             <asp:TextBox ID="txtInformacion" runat="server" BorderColor="Red" 
                                 BorderWidth="3px" Height="60px" TextMode="MultiLine" Width="300px" 
-                                MaxLength="2000"></asp:TextBox>
+                                MaxLength="2000"></asp:TextBox>--%>
                             <br />
                             <asp:Label ID="Label9" runat="server" 
                                 Text="Toda informacion que se complete en este formulario y las fotos que se adjunten podrán ser modificados o editadas para su publicación." Font-Size="8pt"></asp:Label>

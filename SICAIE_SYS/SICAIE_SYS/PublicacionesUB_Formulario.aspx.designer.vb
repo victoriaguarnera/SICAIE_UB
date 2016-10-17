@@ -131,24 +131,6 @@ Partial Public Class PublicacionesUB_Formulario
     Protected WithEvents txtCuerpo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label8 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtInformacion control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtInformacion As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Label9 control.
     '''</summary>
     '''<remarks>
