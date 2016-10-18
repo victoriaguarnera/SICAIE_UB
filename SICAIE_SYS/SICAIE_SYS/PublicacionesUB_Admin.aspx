@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SICAIE_General.Master" CodeBehind="PublicacionesUB_Admin.aspx.vb" Inherits="SICAIE_SYS.PublicacionesUB_Admin" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SICAIE_Publicaciones.Master" CodeBehind="PublicacionesUB_Admin.aspx.vb" Inherits="SICAIE_SYS.PublicacionesUB_Admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,7 +21,7 @@
             border-style: none;
             border-color: inherit;
             border-width: 0;
-            background-color:#7ea61f;
+            background-color:black;
             color:White;
             height:20px;
             width:80px;
@@ -29,6 +29,7 @@
             text-transform:capitalize;
             text-align: center;
               }
+          
            
         </style>
 </head>
@@ -47,7 +48,7 @@
            <br/>
            <br/>
            <br/>
-          Todavía no publicaste nada! Hacé click   <a class='LinkMail' href='PublicacionesUBFormulario.aspx?'>AQUI</a>  para empezar a vender eso que ya no te sirve!  
+          No hay publicaciones disponibles para aprobacion .
           <br/>
            <br/>
            <br/>
@@ -64,13 +65,15 @@
     <table class = "tabla_1" align = 'center' >
         
         <tr>
-            <th class="tabla_1" colspan=7>
-               <center>Mis Avisos</center> </th>
+            <th class="tabla_1" colspan=9>
+               <center>Publicaciones a verificar</center> </th>
             <tr class="tabla_1">
              <td class="td_1"><center>Titulo</center></td>
-             <td class="td_1"><center>Informacion</center></td>
              <td class="td_1"><center>Estado</center></td>
-             <td class="td_1"><center>Tipo Publicacion</center></td> 
+             <td class="td_1"><center>Creador</center></td>
+             <td class="td_1"><center>Fecha Alta</center></td> 
+             <td class="td_1"></td>
+             <td class="td_1"></td>
              <td class="td_1"></td>
              <td class="td_1"></td>
             </tr>
@@ -80,11 +83,11 @@
                     <td class="td_1">
                             <%#Eval("Titulo")%></td>
                         <td class="td_1">
-                            <%#Eval("Informacion")%></td>
-                        <td class="td_1">
                             <%#Eval("Estado")%></td>
                         <td class="td_1">
-                            <%#Eval("TipoPublicacion")%></td>
+                            <%#Eval("Creador")%></td>
+                        <td class="td_1">
+                            <%#Eval("Fecha_Alta")%></td>
                         <td class="td_1">
                             <%--<asp:Button ID="btnEditarAviso"   runat="server" Text="Editar" /></td>--%>
                             <center>
@@ -99,7 +102,18 @@
                                    <asp:Button ID="btnEliminarAviso" onclientclick="if (!confirm('¿esta seguro?...')) return false; " CommandName='<%#Eval("ID")%>' class='BotonSmall' UseSubmitBehavior="false" runat="server" Text="Eliminar" />
                                  </center>
                             </td>
-                          
+                          <td class="td_1">
+                                   <%-- <a class='LinkMail'  href='AdminPublicacionesUB.aspx?id=<%# DataBinder.Eval(Container.DataItem, "ID") %>'><asp:Label ID="Label2" runat="server" Text="Eliminar"></asp:Label> <a>--%>
+                                 <center >
+                                   <asp:Button ID="btnAprobarPublicacion" OnClick='OnbtnAprobarPublicacion_Click' CommandArgument='<%#Eval("ID")%>' class='BotonSmall' UseSubmitBehavior="false" runat="server" Text="Aprobar" />
+                                 </center>
+                            </td>
+                               <td class="td_1">
+                                   <%-- <a class='LinkMail'  href='AdminPublicacionesUB.aspx?id=<%# DataBinder.Eval(Container.DataItem, "ID") %>'><asp:Label ID="Label2" runat="server" Text="Eliminar"></asp:Label> <a>--%>
+                                 <center >
+                                   <asp:Button ID="btnRevisarPublicacion" onclientclick="if (!confirm('La Noticia sera enviada a revision,¿esta seguro?...')) return false; " CommandName='<%#Eval("ID")%>' class='BotonSmall' UseSubmitBehavior="false" runat="server" Text="Revision" />
+                                 </center>
+                            </td>
                         </td>
                     </tr>
                 </ItemTemplate>
