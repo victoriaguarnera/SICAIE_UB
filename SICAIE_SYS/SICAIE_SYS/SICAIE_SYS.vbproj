@@ -81,7 +81,6 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BuscadorUB.html" />
     <Content Include="css\Cartelera\actividades solo-01.png" />
     <Content Include="css\Cartelera\avisos solo-01.png" />
     <Content Include="css\Cartelera\banner-01.png" />
@@ -122,7 +121,6 @@
     <Content Include="PublicacionesUB.aspx" />
     <Content Include="PublicacionesUB_Admin.aspx" />
     <Content Include="PublicacionesUB_Formulario.aspx" />
-    <Content Include="SubMenuUB.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -85,49 +85,51 @@ Public Class PublicacionesUB_Formulario
     Protected Sub precargarDatosFormulario(ByVal id As String)
 
 
-        'Dim cmdCarga As New SqlCommand()
-        'Dim adapterCarga As New SqlDataAdapter()
-        'Dim dsResult As New DataSet
-        'Dim Con2 As New SqlConnection(ConfigurationManager.ConnectionStrings("SubSICAIE_UBConnectionString").ConnectionString.ToString)
-        'cmdCarga.CommandText = "exec SP_Publicaciones_Buscar @id,@usuario"
-        'Dim seleccionSql As New SqlParameter("@id", SqlDbType.VarChar)
-        'seleccionSql.Value = id
+        Dim cmdCarga As New SqlCommand()
+        Dim adapterCarga As New SqlDataAdapter()
+        Dim dsResult As New DataSet
+        Dim Con2 As New SqlConnection(ConfigurationManager.ConnectionStrings("SICAIE_SYS_ConnectionString").ConnectionString.ToString)
+        cmdCarga.CommandText = "exec SP_UB_Publicaciones_Buscar @id"
+        Dim seleccionSql As New SqlParameter("@id", SqlDbType.VarChar)
+        seleccionSql.Value = id
         'Dim seleccionSql2 As New SqlParameter("@usuario", SqlDbType.VarChar)
         'seleccionSql2.Value = Session("stUser")
-        'cmdCarga.Parameters.Add(seleccionSql)
+        cmdCarga.Parameters.Add(seleccionSql)
         'cmdCarga.Parameters.Add(seleccionSql2)
-        'cmdCarga.CommandType = CommandType.Text
-        'cmdCarga.Connection = Con2
-        'adapterCarga.SelectCommand = cmdCarga
+        cmdCarga.CommandType = CommandType.Text
+        cmdCarga.Connection = Con2
+        adapterCarga.SelectCommand = cmdCarga
 
-        'adapterCarga.Fill(dsResult)
-        'Dim codError As String
-        'codError = dsResult.Tables(0).Rows(0).Item(0).ToString()
-        'If codError = "OK" Then
-        '    txtInformacion.Text = dsResult.Tables(0).Rows(0).Item(3).ToString()
-        '    txtTelefono.Text = dsResult.Tables(0).Rows(0).Item(4).ToString()
-        '    txtEmail.Text = dsResult.Tables(0).Rows(0).Item(5).ToString()
-        '    txtTitulo.Text = dsResult.Tables(0).Rows(0).Item(8).ToString()
-        '    txtNombre.Text = dsResult.Tables(0).Rows(0).Item(9).ToString()
+        adapterCarga.Fill(dsResult)
+        Dim codError As String
+        codError = dsResult.Tables(0).Rows(0).Item(0).ToString()
+        If codError = "OK" Then
+            txtTitulo.Text = dsResult.Tables(0).Rows(0).Item(2).ToString()
+            txtSubtitulo.Text = dsResult.Tables(0).Rows(0).Item(3).ToString()
+            txtCuerpo.Text = dsResult.Tables(0).Rows(0).Item(4).ToString()
+            ImgFotoNoticia.ImageUrl = dsResult.Tables(0).Rows(0).Item(5).ToString()
 
-        '    Dim tipoPublicacion As Integer
-        '    tipoPublicacion = dsResult.Tables(0).Rows(0).Item(1)
-        '    If tipoPublicacion = 1 Then
-        '        rblTipos.Items(0).Selected = True
-        '        txtPrecio.Text = dsResult.Tables(0).Rows(0).Item(10).ToString()
-        '    Else
-        '        rblTipos.Items(1).Selected = True
-        '        txtPrecio.Text = ""
-        '        txtPrecio.Visible = False
-        '        lblPrecio.Visible = False
 
-        '    End If
-        '    rblTipos.Enabled = False
-        'Else
-        '    Response.Redirect("CarteleraMVL.aspx")
-        'End If
+            Dim tipoPublicacion As Integer
+            tipoPublicacion = dsResult.Tables(0).Rows(0).Item(1)
+            Select tipoPublicacion
+                Case 1
+                    rblTipos.Items(0).Selected = True
+                Case 2
+                    rblTipos.Items(1).Selected = True
+                Case 3
+                    rblTipos.Items(2).Selected = True
+                Case 4
+                    rblTipos.Items(3).Selected = True
 
-        'Con2.Close()
+                Case Else
+                    rblTipos.Enabled = False
+
+            End Select
+
+        End If
+
+        Con2.Close()
     End Sub
 
     Protected Sub btnEnviar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEnviar.Click

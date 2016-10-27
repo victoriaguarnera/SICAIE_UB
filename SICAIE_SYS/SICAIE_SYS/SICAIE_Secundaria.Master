@@ -41,24 +41,15 @@
  </tr>
   <tr> <td colspan=4          style="background-color:white" >    
            
-<asp:Panel ID="pnlMenuUB" runat="server">
-     
-
-   <!--#INCLUDE file="Buscadorub.html" -->
-            
- <asp:Panel ID="pnlMenuKiosco" runat="server" visible=false>
-  <!--#INCLUDE file="SubMenuUB.html" -->
-	      </asp:Panel>
-	      
+      <asp:Panel ID="pnlMenuUB" runat="server">
 	   <asp:Panel ID="pnlMenuC" runat="server">
   <!--#INCLUDE file="MenuUB.html" -->
 	      </asp:Panel>    
 	       
-
+          </asp:Panel>
   
 	      
-     </asp:Panel>
-  
+ 
 
         
         
