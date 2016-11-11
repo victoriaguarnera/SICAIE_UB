@@ -7,7 +7,6 @@
 
       
           <asp:Panel ID="pnlForm" runat="server" >
-       
          <center>
        
        
@@ -47,7 +46,7 @@
                 </tr>
             </table>
           </center>
-          <asp:HiddenField ID="usrDat" runat="server" Value="" />
+          <asp:HiddenField ID="usrDat" ClientIDMode="static" runat="server" Value="" />
         
       
 </td><td class="LoginUBBordeVer"></td></tr>
@@ -84,17 +83,27 @@
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
+        var mail = profile.getEmail();
+        if (mail.endsWith('@comunidad.ub.edu.ar') || mail.endsWith('@ub.edu.ar')) {
+            var usrDat = document.getElementById('usrDat');
+            usrDat.value = profile.getEmail();
+            document.getElementById('cmdAceptar').click();
+        }
+        else {
+            alert("Por favor ingrese con su direccion de Comunidad o UB");
+            signOut();
+        }
         //TODO tarea para el hogar
         //mandar profile.getEmail() al campo hidden usrDat
         //en backcode cambiar logica e cmdAceptar_click, saca data del hidden field
-        //if domino not comunidad.ub.edu.ar o ub, signOut(); y escribir alerta en lblerror
-        sarasa();
+        //if domino not @comunidad.ub.edu.ar o @ub, signOut(); y escribir alerta en lblerror
+        //sarasa();
     }
     function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-        });
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://accounts.google.com/Logout';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
     }
     /*function sarasa() {
         $.ajax({

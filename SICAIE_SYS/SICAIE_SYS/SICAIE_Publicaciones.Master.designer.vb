@@ -68,22 +68,13 @@ Partial Public Class SICAIE_Publicaciones
     Protected WithEvents pnlMenuUB As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''pnlMenuUBKiosco control.
+    '''pnlMenuC control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlMenuUBKiosco As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''pnlMenuUBC control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlMenuUBC As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents pnlMenuC As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''ContentPlaceHolder1 control.

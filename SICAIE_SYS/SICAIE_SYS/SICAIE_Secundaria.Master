@@ -11,8 +11,18 @@
 
 <Link href="css/style.css" type="text/css" rel="stylesheet"/>
 <Link href="css/EstilosUB.css" type="text/css" rel="stylesheet"/>
-
     <title>Universidad de Belgrano</title>
+    <script>
+        function signOut() {
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://accounts.google.com/Logout';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            var baseURL = '<%=HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>';
+            var GoToPage = baseURL + "Login.aspx";
+            window.location = GoToPage;
+        }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     
     </asp:ContentPlaceHolder>
@@ -36,7 +46,7 @@
       
       </td>
  <td  style ="text-align:right" > 
-      <asp:Button          CssClass="LogOutBoton"   onclientclick="if (!confirm('¿Esta seguro que desea salir?')) return false;"  ID="btnSalir" runat="server" Text="Salir"  UseSubmitBehavior="False"  />
+      <asp:Button CssClass="LogOutBoton" onclientclick="if (!confirm('¿Esta seguro que desea salir?')) return false; else signOut();"  ID="btnSalir" runat="server" Text="Salir"  UseSubmitBehavior="False"  />
            </td>
  </tr>
   <tr> <td colspan=4          style="background-color:white" >    

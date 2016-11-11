@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SICAIE_Publicaciones.Master" CodeBehind="PublicacionesUB_Admin.aspx.vb" Inherits="SICAIE_SYS.PublicacionesUB_Admin" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" EnableEventValidation="False" MasterPageFile="~/SICAIE_Publicaciones.Master" CodeBehind="PublicacionesUB_Admin.aspx.vb" Inherits="SICAIE_SYS.PublicacionesUB_Admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -34,12 +34,6 @@
         </style>
 </head>
 
-    
-    <div>
-    
-       
-    
-    </div>
     <p>
         <asp:Panel runat="server" ID = "pnlMensaje" visible = 'false'>
         <table class = "style3" align = 'center' >
@@ -65,13 +59,14 @@
     <table class = "tabla_1" align = 'center' >
         
         <tr>
-            <th class="tabla_1" colspan=9>
+            <th class="tabla_1" colspan=10>
                <center>Publicaciones a verificar</center> </th>
             <tr class="tabla_1">
              <td class="td_1"><center>Titulo</center></td>
              <td class="td_1"><center>Estado</center></td>
              <td class="td_1"><center>Creador</center></td>
              <td class="td_1"><center>Fecha Alta</center></td> 
+             <td class="td_1"><center>Fecha Modificacion</center></td>
              <td class="td_1"></td>
              <td class="td_1"></td>
              <td class="td_1"></td>
@@ -89,18 +84,20 @@
                         <td class="td_1">
                             <%#Eval("Fecha_Alta")%></td>
                         <td class="td_1">
+                            <%#Eval("Fecha_Modificacion")%></td>
+                        <td class="td_1">
                             <%--<asp:Button ID="btnEditarAviso"   runat="server" Text="Editar" /></td>--%>
-                            <center>
+                          <%--  <center>--%>
                                <%-- <a class="LinkMail" href="PublicacionesUB.aspx?">
                                     <asp:Label ID="Label1" class='BotonSmall' runat="server" Text="Editar"></asp:Label>
                                 <a>--%>
-                                 <asp:Button ID="btnEditarAviso"  class='BotonSmall' CommandArgument='<%#Eval("ID")%>' OnClick='OnbtnEditarAviso_Click' runat="server" Text="Editar" />
-                            </center>
+                                 <asp:Button ID="btnEditarAviso"  class='BotonSmall' CommandName='<%#Eval("ID")%>'  OnClick='OnbtnEditarAviso_Click' runat="server" Text="Editar" />
+                          <%--  </center>--%>
                             <td class="td_1">
                                    <%-- <a class='LinkMail'  href='AdminPublicacionesUB.aspx?id=<%# DataBinder.Eval(Container.DataItem, "ID") %>'><asp:Label ID="Label2" runat="server" Text="Eliminar"></asp:Label> <a>--%>
-                                 <center >
+                                <%-- <center >--%>
                                    <asp:Button ID="btnEliminarAviso" onclientclick="if (!confirm('¿esta seguro?...')) return false; " CommandName='<%#Eval("ID")%>' class='BotonSmall' UseSubmitBehavior="false" runat="server" Text="Eliminar" />
-                                 </center>
+                                <%-- </center>--%>
                             </td>
                           <td class="td_1">
                                    <%-- <a class='LinkMail'  href='AdminPublicacionesUB.aspx?id=<%# DataBinder.Eval(Container.DataItem, "ID") %>'><asp:Label ID="Label2" runat="server" Text="Eliminar"></asp:Label> <a>--%>
@@ -111,7 +108,7 @@
                                <td class="td_1">
                                    <%-- <a class='LinkMail'  href='AdminPublicacionesUB.aspx?id=<%# DataBinder.Eval(Container.DataItem, "ID") %>'><asp:Label ID="Label2" runat="server" Text="Eliminar"></asp:Label> <a>--%>
                                  <center >
-                                   <asp:Button ID="btnRevisarPublicacion" onclientclick="if (!confirm('La Noticia sera enviada a revision,¿esta seguro?...')) return false; " CommandName='<%#Eval("ID")%>' class='BotonSmall' UseSubmitBehavior="false" runat="server" Text="Revision" />
+                                   <asp:Button ID="btnRevisarPublicacion"  OnClick='OnbtnRevisarPublicacion_Click' CommandArgument='<%#Eval("ID")%>' class='BotonSmall' UseSubmitBehavior="false" runat="server" Text="Revision" />
                                  </center>
                             </td>
                         </td>

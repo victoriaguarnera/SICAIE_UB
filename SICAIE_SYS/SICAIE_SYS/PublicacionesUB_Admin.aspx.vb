@@ -94,9 +94,49 @@ Public Class PublicacionesUB_Admin
     Protected Sub OnbtnEditarAviso_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim control As Web.UI.WebControls.Button = sender
         Dim id As String
-        id = control.CommandArgument.ToString()
+        id = control.CommandName.ToString()
         'HACER CODIGO PARA ESTO
         Response.Redirect("PublicacionesUB_Formulario.aspx?id=" + id)
+
+    End Sub
+    Protected Sub OnbtnRevisarPublicacion_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Dim control As Web.UI.WebControls.Button = sender
+        Dim id As String
+        id = control.CommandArgument.ToString()
+        Try
+
+            If id <> "" Then
+                Dim cmdCarga As New SqlCommand()
+                Dim adapterCarga As New SqlDataAdapter()
+                Dim dsResult As New DataSet
+
+                Dim Con2 As New SqlConnection(ConfigurationManager.ConnectionStrings("SICAIE_SYS_ConnectionString").ConnectionString.ToString)
+                cmdCarga.CommandText = "exec SP_UB_Publicaciones_Cambiar_Estado  @id ,@idusr,@estado"
+                Dim seleccionSql As New SqlParameter("@id", SqlDbType.Int)
+                seleccionSql.Value = id
+                cmdCarga.Parameters.Add(seleccionSql)
+                Dim seleccionSql2 As New SqlParameter("@idusr", SqlDbType.Int)
+                seleccionSql2.Value = 123
+                cmdCarga.Parameters.Add(seleccionSql2)
+                Dim seleccionSql3 As New SqlParameter("@estado", SqlDbType.Int)
+                seleccionSql3.Value = 3 'estado Revision
+                cmdCarga.Parameters.Add(seleccionSql3)
+                cmdCarga.CommandType = CommandType.Text
+                cmdCarga.Connection = Con2
+                adapterCarga.SelectCommand = cmdCarga
+
+                adapterCarga.Fill(dsResult)
+                Dim resultado As String
+                resultado = dsResult.Tables(0).Rows(0).Item(0)
+                If resultado = "OK" Then
+
+                    ClientScript.RegisterStartupScript(Me.GetType(), "script", "<script>alert('La noticia fue enviada a revisión.');</script>")
+                    CargarRepeater()
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
 
     End Sub
     Protected Sub OnbtnAprobarPublicacion_Click(ByVal sender As Object, ByVal e As EventArgs)

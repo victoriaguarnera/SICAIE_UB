@@ -127,6 +127,8 @@ Public Class PublicacionesUB_Formulario
 
             End Select
 
+
+
         End If
 
         Con2.Close()
@@ -138,17 +140,20 @@ Public Class PublicacionesUB_Formulario
         lblError.Visible = False
 
         If fnValidar() Then
+
             If InsertarPublicacion(strError) Then
                 Call LimpiarCampos()
-                
-                ClientScript.RegisterStartupScript(Me.GetType(), "script", "<script>alert('Tu Publicacion ha sido Guardada.');</script>")
 
+                ClientScript.RegisterStartupScript(Me.GetType(), "script", "<script>alert('Tu Publicacion ha sido Guardada.');</script>")
+                Response.Redirect("PublicacionesUB_Admin.aspx")
             Else
                 lblError.Text = strError
                 lblError.Visible = True
             End If
+
         Else
             lblError.Visible = True
+
         End If
 
 
@@ -169,124 +174,89 @@ Public Class PublicacionesUB_Formulario
 
                 RRHHConn.Open()
 
-                'If aEditar Then
-                sSql = " exec SP_UB_Publicaciones_Alta @Titulo ,@Texto_Corto,@Texto_Largo,@Foto,@Tags ,@Orden,@ID_Creador"
+                If Not aEditar Then
+                    sSql = " exec SP_UB_Publicaciones_Alta @Titulo ,@Texto_Corto,@Texto_Largo,@Foto,@Tags ,@Orden,@ID_Creador"
 
-                cmd.CommandText = sSql
-                cmd.CommandType = CommandType.Text
-                cmd.Connection = RRHHConn
+                    cmd.CommandText = sSql
+                    cmd.CommandType = CommandType.Text
+                    cmd.Connection = RRHHConn
 
-                '                @Titulo varchar(50),
-                '@Texto_Corto varchar(500),
-                '@Texto_Largo varchar(8000),
-                '@Foto varchar(1000),
-                '@Tags varchar(2000),
-                '@Orden int,
-                '@ID_Creador  int
+                 
 
-                cmd.Parameters.AddWithValue("@Titulo", SqlDbType.VarChar)
-                cmd.Parameters("@Titulo").Value = txtTitulo.Text
+                    cmd.Parameters.AddWithValue("@Titulo", SqlDbType.VarChar)
+                    cmd.Parameters("@Titulo").Value = txtTitulo.Text
 
 
-                cmd.Parameters.AddWithValue("@Texto_Corto", SqlDbType.VarChar)
-                cmd.Parameters("@Texto_Corto").Value = txtSubtitulo.Text
+                    cmd.Parameters.AddWithValue("@Texto_Corto", SqlDbType.VarChar)
+                    cmd.Parameters("@Texto_Corto").Value = txtSubtitulo.Text
 
-                cmd.Parameters.AddWithValue("@Texto_Largo", SqlDbType.VarChar)
-                cmd.Parameters("@Texto_Largo").Value = txtCuerpo.Text
+                    cmd.Parameters.AddWithValue("@Texto_Largo", SqlDbType.VarChar)
+                    cmd.Parameters("@Texto_Largo").Value = txtCuerpo.Text
 
-                cmd.Parameters.AddWithValue("@Foto", SqlDbType.VarChar)
-                cmd.Parameters("@Foto").Value = ImgFotoNoticia.ImageUrl.ToString()
+                    cmd.Parameters.AddWithValue("@Foto", SqlDbType.VarChar)
+                    cmd.Parameters("@Foto").Value = ImgFotoNoticia.ImageUrl.ToString()
 
-                cmd.Parameters.AddWithValue("@Tags", SqlDbType.VarChar)
-                cmd.Parameters("@Tags").Value = ""
+                    cmd.Parameters.AddWithValue("@Tags", SqlDbType.VarChar)
+                    cmd.Parameters("@Tags").Value = ""
 
-                cmd.Parameters.AddWithValue("@Orden", SqlDbType.Int)
-                cmd.Parameters("@Orden").Value = 1
+                    cmd.Parameters.AddWithValue("@Orden", SqlDbType.Int)
+                    cmd.Parameters("@Orden").Value = 1
 
-                cmd.Parameters.AddWithValue("@ID_Creador", SqlDbType.Int)
-                cmd.Parameters("@ID_Creador").Value = 1
+                    cmd.Parameters.AddWithValue("@ID_Creador", SqlDbType.Int)
+                    cmd.Parameters("@ID_Creador").Value = 1
 
-                da.SelectCommand = cmd
+                    da.SelectCommand = cmd
 
-                da.Fill(dsResult)
+                    da.Fill(dsResult)
 
-                If dsResult.Tables(0).Rows(0).Item(0) = "OK" Then
-                    InsertarPublicacion = True
-                    'InsertarFotos(strError, IdPublicacion)
+                    If dsResult.Tables(0).Rows(0).Item(0) = "OK" Then
+                        InsertarPublicacion = True
+                        'InsertarFotos(strError, IdPublicacion)
+                    Else
+                        InsertarPublicacion = False
+
+                    End If
                 Else
-                    InsertarPublicacion = False
+                    sSql = " exec SP_UB_Publicaciones_Guardar_Cambios  @IdPublicacion,@Titulo, @Texto_Corto ,@Texto_Largo,@Foto,@IdModificador"
 
-                End If
-                '        Else
-                '            sSql = " exec SP_Cartelera_Publicacion_Inscripcion_Guardar @OP, @Legajo,@IDPublicacion ,@TipoPublicacion,@FechaVigencia,@Informacion,@Telefono,@email,@Usuario,@Titulo,@Nombre,@Precio"
+                    cmd.CommandText = sSql
+                    cmd.CommandType = CommandType.Text
+                    cmd.Connection = RRHHConn
 
-                '            cmd.CommandText = sSql
-                '            cmd.CommandType = CommandType.Text
-                '            cmd.Connection = RRHHConn
+                    cmd.Parameters.AddWithValue("@IdPublicacion", SqlDbType.Int)
+                    cmd.Parameters("@IdPublicacion").Value = IdPublicacion
 
-                '            cmd.Parameters.AddWithValue("@OP", SqlDbType.Int)
-                '            cmd.Parameters("@OP").Value = "ADD"
+                    cmd.Parameters.AddWithValue("@Titulo", SqlDbType.VarChar)
+                    cmd.Parameters("@Titulo").Value = txtTitulo.Text
 
-                '            cmd.Parameters.AddWithValue("@Legajo", SqlDbType.Int)
-                '            cmd.Parameters("@Legajo").Value = Session("stUser")
+                    cmd.Parameters.AddWithValue("@Texto_Corto", SqlDbType.VarChar)
+                    cmd.Parameters("@Texto_Corto").Value = txtSubtitulo.Text
 
-                '            cmd.Parameters.AddWithValue("@IDPublicacion", SqlDbType.Int)
-                '            cmd.Parameters("@IDPublicacion").Value = 0
+                    cmd.Parameters.AddWithValue("@Texto_Largo", SqlDbType.VarChar)
+                    cmd.Parameters("@Texto_Largo").Value = txtCuerpo.Text
 
-                '            cmd.Parameters.AddWithValue("@TipoPublicacion", SqlDbType.Int)
+                    cmd.Parameters.AddWithValue("@Foto", SqlDbType.VarChar)
+                    cmd.Parameters("@Foto").Value = ImgFotoNoticia.ImageUrl.ToString()
 
-                '            If rblTipos.Items(0).Selected Then
-                '                cmd.Parameters("@TipoPublicacion").Value = 1
-                '            Else
-                '                cmd.Parameters("@TipoPublicacion").Value = 2
-                '            End If
+                    'cmd.Parameters.AddWithValue("@Tags", SqlDbType.VarChar)
+                    'cmd.Parameters("@Tags").Value = ""
 
-                '            cmd.Parameters.AddWithValue("@FechaVigencia", SqlDbType.VarChar)
-                '            'If Not IsDate(txtVigencia.Text) Then
-                '            '    cmd.Parameters("@FechaVigencia").Value = "29991231"
-                '            'Else
-                '            '    cmd.Parameters("@FechaVigencia").Value = "" & Fecha_AAAAMMDD(txtVigencia.Text)
-                '            'End If
-                '            cmd.Parameters("@FechaVigencia").Value = "29991231"
+                    cmd.Parameters.AddWithValue("@IdModificador", SqlDbType.Int)
+                    cmd.Parameters("@IdModificador").Value = 2
 
-                '            cmd.Parameters.AddWithValue("@Estado", SqlDbType.TinyInt)
-                '            cmd.Parameters("@Estado").Value = 1
+                    da.SelectCommand = cmd
+                        da.Fill(dsResult)
 
-                '            cmd.Parameters.AddWithValue("@Informacion", SqlDbType.VarChar)
-                '            cmd.Parameters("@Informacion").Value = txtInformacion.Text
+                        If dsResult.Tables(0).Rows(0).Item(0) = "OK" Then
+                            InsertarPublicacion = True
+                        'InsertarFotos(strError, dsResult.Tables(0).Rows(0).Item(1))
+                        Else
+                            InsertarPublicacion = False
+                            'strError = dsResult.Tables(0).Rows(0).Item(1)
+                        End If
+                    End If
 
-                '            cmd.Parameters.AddWithValue("@Telefono", SqlDbType.VarChar)
-                '            cmd.Parameters("@Telefono").Value = txtTelefono.Text
-
-                '            cmd.Parameters.AddWithValue("@email", SqlDbType.VarChar)
-                '            cmd.Parameters("@email").Value = txtEmail.Text
-
-                '            cmd.Parameters.AddWithValue("@Nombre", SqlDbType.VarChar)
-                '            cmd.Parameters("@Nombre").Value = txtNombre.Text
-
-                '            cmd.Parameters.AddWithValue("@Titulo", SqlDbType.VarChar)
-                '            cmd.Parameters("@Titulo").Value = txtTitulo.Text
-
-                '            cmd.Parameters.AddWithValue("@Precio", SqlDbType.VarChar)
-                '            cmd.Parameters("@Precio").Value = txtPrecio.Text
-
-                '            cmd.Parameters.AddWithValue("@Usuario", SqlDbType.VarChar)
-                '            cmd.Parameters("@Usuario").Value = Session("stUser")
-
-                '            da.SelectCommand = cmd
-
-                '            da.Fill(dsResult)
-
-                '            If dsResult.Tables(0).Rows(0).Item(0) = "OK" Then
-                '                InsertarPublicacion = True
-                '                InsertarFotos(strError, dsResult.Tables(0).Rows(0).Item(1))
-                '            Else
-                '                InsertarPublicacion = False
-                '                'strError = dsResult.Tables(0).Rows(0).Item(1)
-                '            End If
-                '        End If
-
-                RRHHConn.Close()
+                    RRHHConn.Close()
             End Using
                 Catch ex As Exception
             InsertarPublicacion = False
@@ -521,11 +491,13 @@ Public Class PublicacionesUB_Formulario
     'End Sub
     Public Function PDF_KIOSCO()
         Return FuncionesWebUB.PDF_KIOSCO()
+
     End Function
 
     Public Shared Function LlamarPF(ByVal varCanal As String, ByVal strPdf As String, ByVal num As Double) As String
         Return FuncionesWebUB.LlamarPF(varCanal, strPdf, num)
     End Function
+
 
 
 

@@ -12,6 +12,17 @@
 <LINK href="css/Style.css" type="text/css" rel="stylesheet"/>
 <LINK href="css/EstilosUB.css" type="text/css" rel="stylesheet"/>
     <title>Página de la Sub RRHH - MVL</title>
+    <script>
+        function signOut() {
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://accounts.google.com/Logout';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            var baseURL = '<%=HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>';
+            var GoToPage = baseURL + "Login.aspx";
+            location.replace = GoToPage;
+        }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     
     </asp:ContentPlaceHolder>
@@ -35,10 +46,10 @@
       
       </td>
  <td   style = 'position:center'> 
-      <asp:Button          CssClass="LogOutBoton"   onclientclick="if (!confirm('¿Esta seguro que desea salir?')) return false;"  ID="btnSalir" runat="server" Text="Salir"  UseSubmitBehavior="False"  />
+      <asp:Button          CssClass="LogOutBoton"   onclientclick="if (!confirm('¿Esta seguro que desea salir?')) return false; else signOut();"  ID="btnSalir" runat="server" Text="Salir"  UseSubmitBehavior="False"  />
            </td>
  </tr>
-  <tr> <td colspan=4          style="background-color:white" >    
+  <tr> <td colspan=4 style="background-color:white" >    
            
            
 

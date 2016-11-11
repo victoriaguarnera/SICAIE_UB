@@ -27,6 +27,27 @@ Public Class Login
     End Sub
 
     Protected Sub cmdAceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdAceptar.Click
+        Dim mail As String = usrDat.Value
+        Dim id As Integer
+        Dim tipo As Integer
+        Try
+            Dim cmdCarga As New SqlCommand()
+            Dim adapterCarga As New SqlDataAdapter()
+            Dim sqlParameters As New SqlParameter("@usuario", mail)
+            Dim Con2 As New SqlConnection(ConfigurationManager.ConnectionStrings("SICAIE_SYS_ConnectionString").ConnectionString.ToString)
+            cmdCarga.CommandText = "exec SP_UB_SYS_Login @usuario"
+            cmdCarga.Parameters.Add(sqlParameters)
+            cmdCarga.CommandType = CommandType.Text
+            cmdCarga.Connection = Con2
+            adapterCarga.SelectCommand = cmdCarga
+            Dim tablaAvisos As New DataTable()
+            adapterCarga.Fill(tablaAvisos)
+            id = tablaAvisos.Rows(0)(0)
+            tipo = tablaAvisos.Rows(0)(1)
+        Catch ex As Exception
+
+        End Try
+
         ' If IsPostBack Then
 
         'Try
@@ -43,7 +64,7 @@ Public Class Login
 
 
 
-        Server.Transfer("PublicacionesUB.aspx")
+        Server.Transfer("PublicacionesUB.aspx?ID=" & id & "&T=" & tipo)
 
         'Else
         'lblError.Text = "Usuario o contraseña inválida"

@@ -68,15 +68,6 @@ Partial Public Class SICAIE_Secundaria
     Protected WithEvents pnlMenuUB As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''pnlMenuKiosco control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlMenuKiosco As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
     '''pnlMenuC control.
     '''</summary>
     '''<remarks>

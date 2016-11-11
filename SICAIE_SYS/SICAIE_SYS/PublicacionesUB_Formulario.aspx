@@ -111,7 +111,7 @@
 
 <a  style="text-decoration:underline;font-size:8pt;" href="#" onclick="javascript:LlamarPF('Cartelera/terminos.pdf')">Términos y condiciones</a>
 <asp:Label ID="Label10" runat="server" Font-Size="8pt" 
-                                Text=" para la publicación de anuncios en la Web del Empleado"></asp:Label>
+                                Text=" para la publicación de la noticia en la web"></asp:Label>
                         </td>
                         <td>
                             &nbsp;</td>
@@ -120,9 +120,8 @@
                         <td align="right">
                        
                                                     <br />
-                            <asp:Button ID="btnEnviar" runat="server" CssClass="BotonCartelera" Text="ENVIAR" Width="114px" 
-                                />
-                          
+                            <asp:Button ID="btnEnviar" runat="server" CssClass="BotonCartelera" Text="ENVIAR" Width="114px" />
+                            
                             <br />
                             <asp:Label ID="lblError" runat="server" ForeColor="Red" Text="Label" 
                                 Visible="False"></asp:Label>
