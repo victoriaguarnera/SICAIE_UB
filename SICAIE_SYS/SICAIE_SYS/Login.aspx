@@ -91,6 +91,8 @@
         }
         else {
             alert("Por favor ingrese con su direccion de Comunidad o UB");
+            //TODO descomentar
+            //BootstrapDialog.alert("Por favor ingrese con su direccion de Comunidad o UB");
             signOut();
         }
         //TODO tarea para el hogar

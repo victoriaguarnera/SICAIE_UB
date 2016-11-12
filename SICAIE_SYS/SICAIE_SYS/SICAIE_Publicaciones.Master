@@ -14,13 +14,14 @@
     <title>Página de la Sub RRHH - MVL</title>
     <script>
         function signOut() {
-            var iframe = document.createElement('iframe');
+            /*var iframe = document.createElement('iframe');
             iframe.src = 'https://accounts.google.com/Logout';
             iframe.style.display = 'none';
-            document.body.appendChild(iframe);
+            document.body.appendChild(iframe);*/
             var baseURL = '<%=HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>';
-            var GoToPage = baseURL + "Login.aspx";
-            location.replace = GoToPage;
+            var Page = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=" + baseURL + "Login.aspx";
+            document.location.href = Page;
+            return false;
         }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -46,7 +47,7 @@
       
       </td>
  <td   style = 'position:center'> 
-      <asp:Button          CssClass="LogOutBoton"   onclientclick="if (!confirm('¿Esta seguro que desea salir?')) return false; else signOut();"  ID="btnSalir" runat="server" Text="Salir"  UseSubmitBehavior="False"  />
+      <label class="LogOutBoton"   onclick="if (!confirm('¿Esta seguro que desea salir?')) return false; else signOut();"  ID="btnSalir">Salir</label>
            </td>
  </tr>
   <tr> <td colspan=4 style="background-color:white" >    
@@ -55,7 +56,43 @@
 
 	 <asp:Panel ID="pnlMenuUB" runat="server">     
 	   <asp:Panel ID="pnlMenuC" runat="server">
-  <!--#INCLUDE file="MenuUB.html" -->
+           <!--Snippet Menu-->
+           <div class="navMenuUBPrincipal">
+                <ul style="padding-top:0; margin-top:0;">
+                    <li><a href='#'></a></li>
+                    <li><a href='PublicacionesUB.aspx'>Home  </a></li>
+                    <li>
+                        <a href='#'>Institucional    </a>
+                        <ul class="subNavegacion Institucional">
+                            <!--<li><a href='InstitucionalOrganigrama.aspx'>Organigrama  </a></li>
+                            <li><a href='InstitucionalMision.aspx'> Misión  </a></li>
+                            <li><a href='InstitucionalAcciones.aspx'>  Acciones  </a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href='#'>Alumnos</a>
+                        <ul class="subNavegacion Capacitacion">
+                            <li><a href='PublicacionesUB_Formulario.aspx'>Subir Noticia </a></li>
+
+                            </ul>
+                    </li>
+                    <li>
+                        <a ID="ProfesoresTag" runat="server" href='#'>Profesores </a>
+                        <ul class="subNavegacion Tramites">
+             
+                            <li>
+                                <a href='#'>Administracion </a>
+                                <ul class="barraLateral tramites">
+                                    <li><a href='PublicacionesUB_Admin.aspx'>Ingresar al sistema </a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+         
+                    <li><a href='DatosUtiles.aspx'>        Datos Útiles  </a></li>
+            </div>
+           <!--Snippet Menu-->
 	      </asp:Panel>    
 	             
      </asp:Panel>

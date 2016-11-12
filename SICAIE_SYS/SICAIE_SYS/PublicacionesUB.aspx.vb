@@ -5,11 +5,25 @@ Imports SICAIE_SYS.FuncionesWebUB
 
 Partial Public Class PublicacionesUB
     Inherits System.Web.UI.Page
+    Dim UserId, UserType As Integer
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'cargaDatos("Select *  from tblPublicaciones where Tipopublicacion=1 order by id desc", 1, 50, DataList1)
         'cargaDatos("Select tblpublicaciones.*, tblSYSUsuarios.Nombre  from tblPublicaciones INNER JOIN tblSYSUsuarios ON tblPublicaciones.Usuario = tblSYSUsuarios.Usuario where Tipopublicacion=1  and Estado=2  order by tblpublicaciones.id desc", 1, 150, DataList1)
+
+        If Request.QueryString("D") <> Nothing Then
+            UserId = Request.QueryString("D")
+
+        End If
+        If Request.QueryString("T") <> Nothing Then
+            UserType = Request.QueryString("T")
+            If UserType = 1 Then
+                Dim profTag As HtmlAnchor = Master.FindControl("ProfesoresTag")
+                profTag.Visible = False
+            End If
+        End If
         cargaDatos("exec SP_UB_Publicaciones_Traer", 1, 150, DataList1)
+
 
     End Sub
     Private Sub cargaDatos(ByVal stQuery As String, ByVal iPaginaActual As Integer, ByVal iCantidadMostrar As Integer, ByRef objData As DataList)
@@ -43,8 +57,6 @@ Partial Public Class PublicacionesUB
             UBConn.Close()
 
         End Using
-
-
     End Sub
     Public Function fnVLObtenerImagenes(ByVal stID) As String
 

@@ -18,7 +18,7 @@
         </td>--%>
          </tr>
         <tr>
-        
+
          <td style="width:80%"; valign="top" align=center>
         <table  style=" min-width:660px;width:90%"  > <tr>
         <td style="background:url(Cartelera/Fondo.png); background-size:cover;      ">
@@ -87,11 +87,11 @@
     </table>
     
     </td> 
-    <%--<td valign=top style="width:126px" align=center> 
+    <%--<td valign=top style="width:126px" align=center> tg
         <%--<input type="button" ID="btnSubir" onclick="window.location='PublicacionesUB_Formulario.aspx';" 
             value="Subir Novedad" style="width:119px"  class="Boton"/>--%>
             <%--  <input type="button" ID="btnVolver" onclick="window.location = 'Login.aspx';" 
-            value="Volver" style="width:119px"  class="Boton"/>--%--%>>
+            value="Volver" style="width:119px"  class="Boton"/>--%--%>
                 
     </tr> 
     </table>

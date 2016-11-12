@@ -50,15 +50,6 @@ Partial Public Class SICAIE_Publicaciones
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''btnSalir control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSalir As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''pnlMenuUB control.
     '''</summary>
     '''<remarks>
@@ -75,6 +66,15 @@ Partial Public Class SICAIE_Publicaciones
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlMenuC As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''ProfesoresTag control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ProfesoresTag As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
     '''ContentPlaceHolder1 control.

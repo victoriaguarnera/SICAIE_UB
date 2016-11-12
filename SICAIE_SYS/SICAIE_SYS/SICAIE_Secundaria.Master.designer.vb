@@ -77,6 +77,15 @@ Partial Public Class SICAIE_Secundaria
     Protected WithEvents pnlMenuC As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''ProfesoresTag control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ProfesoresTag As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''ContentPlaceHolder1 control.
     '''</summary>
     '''<remarks>

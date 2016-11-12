@@ -62,9 +62,7 @@ Public Class Login
         pnlForm.Visible = False
 
 
-
-
-        Server.Transfer("PublicacionesUB.aspx?ID=" & id & "&T=" & tipo)
+        Response.Redirect("PublicacionesUB.aspx?D=" & id & "&T=" & tipo)
 
         'Else
         'lblError.Text = "Usuario o contraseña inválida"
