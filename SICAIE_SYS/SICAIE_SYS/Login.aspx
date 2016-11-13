@@ -2,73 +2,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div class="Contenido">
-    <br><br><br>  <br>  
 
-      
-          <asp:Panel ID="pnlForm" runat="server" >
-         <center>
-       
-       
-<table class="LoginUBTabla"   > 
-<tr ><td colspan=3 class="LoginUBBordeHor"></td></tr>
-<tr><td class="LoginUBBordeVer"> </td><td  ><br></td><td class="LoginUBBordeVer"> </td></tr>
-<tr ><td colspan=3 class="LoginUBTitulo">INICIO DE SESIÓN</td></tr>
-<tr><td class="LoginUBBordeVer"></td><td class="LoginUBCentro">
-
-
-
-
-
-               <table   cellpadding=0 cellspacing=0 align=center>
-               
-                <!--<tr >
-                    <td  align=right style="height:25px"  >
-                       Usuario: &nbsp;</td>
-                    <td>
-                     <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
-                      </td>
-                </tr>
-                <tr>
-                    <td align=right  style="height:25px">
-                         Contraseña &nbsp;</td>
-                    <td>
-                          <asp:TextBox ID="txtPwd"  TextMode="Password" runat="server"></asp:TextBox></td>
-                </tr>-->
-                 <tr>
-                    <td colspan=2 style="text-align: center;">
-                        <asp:Button ID="cmdAceptar" runat="server" Text="Aceptar" OnClick="cmdAceptar_Click" class="LoginUBBoton" ClientIDMode="Static" Style="display:none;"/>
+<link rel="stylesheet" href="css/sicaie-ub.css">
+<link rel="stylesheet" href="Content/bootstrap.min.css">
+ <asp:Panel ID="pnlForm" runat="server" >
+ <div class="login">
+		<div class="login-box">
+			<div class="inic" style="text-align:center;background-color:#AA0A20">
+				<p id="i-s">INICIAR SESION</p>			
+			</div>
+            <div class="login-boxtwo">
+            <div class="btn-google">
+            <asp:Button ID="cmdAceptar" runat="server" Text="Aceptar" OnClick="cmdAceptar_Click" class="LoginUBBoton" ClientIDMode="Static" Style="display:none;"/>
                         <!--<a href="enviarclave.aspx" class="LinkMail">Olvide mi Contraseña</a>
                         <asp:Button runat="server" OnClientClick="sarasa(); return false;" Text="Click for sarasa" />-->
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div><br>
-                       <asp:label ID="lblError" ForeColor=red runat="server"></asp:label> 
-                       </td>
-                </tr>
-            </table>
-          </center>
-          <asp:HiddenField ID="usrDat" ClientIDMode="static" runat="server" Value="" />
-        
-      
-</td><td class="LoginUBBordeVer"></td></tr>
-<tr><td colspan=3 class="LoginUBBordeHor"></td></tr>
-</table> <br>
-         
-         <center>
-
-               <table   class="MVL14_LoginUB">
-               
-                <tr >
-                    <td  align=center style="height:25px"  >
-                 Si entrás por 1° vez, ingresá como Usuario tu número de legajo y como contraseña tu número de DNI.
-                  </td>
-                </tr>
-            </table>
-          </center>
-          </asp:Panel>
-   <asp:Panel ID="pnlOut" runat="server" >
-    <asp:label ID="lblOut" ForeColor=red runat="server"></asp:label> <br>
-      </asp:Panel>
-   </div>    
+            <div class="g-signin2" data-onsuccess="onSignIn"></div><br>
+                <asp:HiddenField ID="usrDat" ClientIDMode="static" runat="server" Value="" />
+            <asp:label ID="lblError" ForeColor=red runat="server"></asp:label>
+            </div>
+          </div>
+		</div>
+ </div>
+ </asp:Panel>
+ <asp:Panel ID="pnlOut" runat="server" >
+     <asp:label ID="lblOut" ForeColor=red runat="server"></asp:label>
+ </asp:Panel>
 <!--<script src="js/jquery.min.js"></script>-->
 <meta name="google-signin-client_id" content="363107088169-6mbvid726g3rdem2rfi865act4dsl7va.apps.googleusercontent.com">
 <script>
