@@ -6,10 +6,11 @@ Public Class PublicacionesUB_Formulario
     Inherits System.Web.UI.Page
     Protected aEditar As Boolean
     Private IdPublicacion As String
-
+    Dim UserId, UserType As Integer
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        UserId = Session("stUser")
+        UserType = Session("stType")
         IdPublicacion = ""
         IdPublicacion = Request.QueryString("id")
         If IdPublicacion <> "" Then
@@ -111,19 +112,19 @@ Public Class PublicacionesUB_Formulario
 
 
             Dim tipoPublicacion As Integer
-            tipoPublicacion = dsResult.Tables(0).Rows(0).Item(1)
+            tipoPublicacion = dsResult.Tables(0).Rows(0).Item(6)
             Select tipoPublicacion
-                Case 1
+                Case 0
                     rblTipos.Items(0).Selected = True
-                Case 2
+                Case 1
                     rblTipos.Items(1).Selected = True
-                Case 3
+                Case 2
                     rblTipos.Items(2).Selected = True
-                Case 4
+                Case 3
                     rblTipos.Items(3).Selected = True
 
                 Case Else
-                    rblTipos.Enabled = False
+                    rblTipos.Enabled = True
 
             End Select
 
@@ -136,7 +137,7 @@ Public Class PublicacionesUB_Formulario
 
     Protected Sub btnEnviar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEnviar.Click
         Dim strError As String
-
+        strError = ""
         lblError.Visible = False
 
         If fnValidar() Then
@@ -145,7 +146,9 @@ Public Class PublicacionesUB_Formulario
                 Call LimpiarCampos()
 
                 ClientScript.RegisterStartupScript(Me.GetType(), "script", "<script>alert('Tu Publicacion ha sido Guardada.');</script>")
-                Response.Redirect("PublicacionesUB_Admin.aspx")
+                If aEditar Then
+                    Response.Redirect("PublicacionesUB_Admin.aspx")
+                End If
             Else
                 lblError.Text = strError
                 lblError.Visible = True
@@ -197,13 +200,13 @@ Public Class PublicacionesUB_Formulario
                     cmd.Parameters("@Foto").Value = ImgFotoNoticia.ImageUrl.ToString()
 
                     cmd.Parameters.AddWithValue("@Tags", SqlDbType.VarChar)
-                    cmd.Parameters("@Tags").Value = ""
+                    cmd.Parameters("@Tags").Value = rblTipos.SelectedIndex
 
                     cmd.Parameters.AddWithValue("@Orden", SqlDbType.Int)
                     cmd.Parameters("@Orden").Value = 1
 
                     cmd.Parameters.AddWithValue("@ID_Creador", SqlDbType.Int)
-                    cmd.Parameters("@ID_Creador").Value = 1
+                    cmd.Parameters("@ID_Creador").Value = UserId
 
                     da.SelectCommand = cmd
 
@@ -217,7 +220,7 @@ Public Class PublicacionesUB_Formulario
 
                     End If
                 Else
-                    sSql = " exec SP_UB_Publicaciones_Guardar_Cambios  @IdPublicacion,@Titulo, @Texto_Corto ,@Texto_Largo,@Foto,@IdModificador"
+                    sSql = " exec SP_UB_Publicaciones_Guardar_Cambios  @IdPublicacion,@Titulo, @Texto_Corto ,@Texto_Largo,@Foto,@Tags,@IdModificador"
 
                     cmd.CommandText = sSql
                     cmd.CommandType = CommandType.Text
@@ -238,11 +241,11 @@ Public Class PublicacionesUB_Formulario
                     cmd.Parameters.AddWithValue("@Foto", SqlDbType.VarChar)
                     cmd.Parameters("@Foto").Value = ImgFotoNoticia.ImageUrl.ToString()
 
-                    'cmd.Parameters.AddWithValue("@Tags", SqlDbType.VarChar)
-                    'cmd.Parameters("@Tags").Value = ""
+                    cmd.Parameters.AddWithValue("@Tags", SqlDbType.VarChar)
+                    cmd.Parameters("@Tags").Value = rblTipos.SelectedIndex
 
                     cmd.Parameters.AddWithValue("@IdModificador", SqlDbType.Int)
-                    cmd.Parameters("@IdModificador").Value = 2
+                    cmd.Parameters("@IdModificador").Value = UserId
 
                     da.SelectCommand = cmd
                         da.Fill(dsResult)
@@ -326,23 +329,23 @@ Public Class PublicacionesUB_Formulario
     Private Function fnValidar() As Boolean
 
 
-        If rblTipos.Items(1).Selected = 0 And rblTipos.Items(0).Selected = 0 Then
-            lblError.Text = "Debe Seleccionar el Tipo de Aviso."
+        If rblTipos.SelectedIndex = -1 Then
+            lblError.Text = "Debe Seleccionar el Tipo de Publicación."
             Return False
         End If
 
         If txtTitulo.Text.Length = 0 Then
-            lblError.Text = "Debe Ingresar el Título del Aviso."
+            lblError.Text = "Debe Ingresar el Título de la publicación."
             Return False
         End If
 
         If txtSubtitulo.Text.Length = 0 Then
-            lblError.Text = "Debe Ingresar el Nombre y Apellido de Contacto."
+            lblError.Text = "Debe Ingresar el subtitulo."
             Return False
         End If
 
         If txtCuerpo.Text.Length = 0 Then
-            lblError.Text = "Debe Ingresar el Teléfono del Aviso."
+            lblError.Text = "Debe Ingresar el cuerpo de la publicación"
             Return False
         End If
 

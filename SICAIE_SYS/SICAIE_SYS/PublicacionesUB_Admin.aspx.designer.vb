@@ -23,6 +23,24 @@ Partial Public Class PublicacionesUB_Admin
     Protected WithEvents pnlMensaje As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''LabelMsj1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelMsj1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LabelMsj2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelMsj2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''pnlDatos control.
     '''</summary>
     '''<remarks>

@@ -70,27 +70,25 @@
                         </ul>
                     </li>
                     <li>
-                        <a href='#'>Alumnos</a>
+                        <a href='#'>Usuario</a>
                         <ul class="subNavegacion Capacitacion">
                             <li><a href='PublicacionesUB_Formulario.aspx'>Subir Noticia </a></li>
 
                             </ul>
                     </li>
                     <li>
-                        <a ID="ProfesoresTag" runat="server" href='#'>Profesores </a>
+                        <a ID="ProfesoresTag" runat="server" href='#'>Administración</a>
                         <ul class="subNavegacion Tramites">
              
                             <li>
-                                <a href='#'>Administracion </a>
-                                <ul class="barraLateral tramites">
-                                    <li><a href='PublicacionesUB_Admin.aspx'>Ingresar al sistema </a></li>
-                                </ul>
+                                <a href='PublicacionesUB_Admin.aspx'>Ingresar al sistema  </a>
+                                
                             </li>
 
                         </ul>
                     </li>
          
-                    <li><a href='DatosUtiles.aspx'>        Datos Útiles  </a></li>
+                    <li><a href='#'>Datos Útiles  </a></li>
             </div>
            <!--Snippet Menu-->
 	      </asp:Panel>    

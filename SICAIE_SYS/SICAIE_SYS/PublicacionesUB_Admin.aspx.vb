@@ -9,10 +9,22 @@ Public Class PublicacionesUB_Admin
     Dim usuario As String
     Dim avisoID As String
     Dim eliminar As Boolean
+    Dim UserId, UserType As Integer
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            UserId = Session("stUser")
+            UserType = Session("stType")
             'usuario = Session("stuser")
-            CargarRepeater()
+            If UserType <> 0 Then
+                pnlDatos.Visible = False
+                pnlMensaje.Visible = True
+                LabelMsj1.Visible = False
+                LabelMsj2.Visible = True
+            Else
+                CargarRepeater()
+            End If
+
+
 
         Catch ex As Exception
 
@@ -44,6 +56,8 @@ Public Class PublicacionesUB_Admin
             Else
                 pnlDatos.Visible = False
                 pnlMensaje.Visible = True
+                LabelMsj1.Visible = True
+                LabelMsj2.Visible = False
             End If
 
         Catch ex As Exception
@@ -65,7 +79,7 @@ Public Class PublicacionesUB_Admin
                 seleccionSql.Value = id
                 cmdCarga.Parameters.Add(seleccionSql)
                 Dim seleccionSql2 As New SqlParameter("@idusr", SqlDbType.Int)
-                seleccionSql2.Value = 123
+                seleccionSql2.Value = UserId
                 cmdCarga.Parameters.Add(seleccionSql2)
                 Dim seleccionSql3 As New SqlParameter("@estado", SqlDbType.Int)
                 seleccionSql3.Value = 0  'estado eliminada 
@@ -116,7 +130,7 @@ Public Class PublicacionesUB_Admin
                 seleccionSql.Value = id
                 cmdCarga.Parameters.Add(seleccionSql)
                 Dim seleccionSql2 As New SqlParameter("@idusr", SqlDbType.Int)
-                seleccionSql2.Value = 123
+                seleccionSql2.Value = UserId
                 cmdCarga.Parameters.Add(seleccionSql2)
                 Dim seleccionSql3 As New SqlParameter("@estado", SqlDbType.Int)
                 seleccionSql3.Value = 3 'estado Revision
@@ -156,7 +170,7 @@ Public Class PublicacionesUB_Admin
                 seleccionSql.Value = id
                 cmdCarga.Parameters.Add(seleccionSql)
                 Dim seleccionSql2 As New SqlParameter("@idusr", SqlDbType.Int)
-                seleccionSql2.Value = 123
+                seleccionSql2.Value = UserId
                 cmdCarga.Parameters.Add(seleccionSql2)
                 Dim seleccionSql3 As New SqlParameter("@estado", SqlDbType.Int)
                 seleccionSql3.Value = 2 'estado aprobada

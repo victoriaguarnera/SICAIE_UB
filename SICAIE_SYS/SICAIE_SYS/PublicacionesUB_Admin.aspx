@@ -42,7 +42,9 @@
            <br/>
            <br/>
            <br/>
-          No hay publicaciones disponibles para aprobacion .
+          <asp:Label ID="LabelMsj1" runat="server" Text="No hay publicaciones disponibles para aprobación."></asp:Label>
+          <asp:Label ID="LabelMsj2" runat="server" Text="ERROR: Debe ser usuario administrador para ingresar a esta pagina ."></asp:Label>
+        
           <br/>
            <br/>
            <br/>
