@@ -1,0 +1,87 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SICAIE_Publicaciones.master.vb" Inherits="SICAIE_SYS.SICAIE_Publicaciones" %>
+
+<!DOCTYPE html/> 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%--<head id="Head2"><meta http-equiv="X-UA-Compatible" content="IE=edge" /> </head>--%>
+<head id="Head1" runat="server">
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/sicaie-ub.css">
+    <title>SICAIE UB</title>
+    <script>
+        function signOut() {
+            /*var iframe = document.createElement('iframe');
+            iframe.src = 'https://accounts.google.com/Logout';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);*/
+            var baseURL = '<%=HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>';
+            var Page = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=" + baseURL + "Login.aspx";
+            document.location.href = Page;
+            return false;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">    
+    </asp:ContentPlaceHolder>       
+</head>
+
+<body  id="BodyPage" runat="server" >
+<form id="form1" runat="server">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="login.aspx">
+                <img id="logoUB" src="Imagenes/LOGOUB.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><label class="LogOutBoton"   onclick="if (!confirm('¿Esta seguro que desea salir?')) return false; else signOut();" ID="btnSalir" style="margin-top:33px;color:white;margin-right:20px;cursor:pointer;border: 2px dotted white;padding:5px;border-radius:8px">Salir</label></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<asp:Panel ID="pnlMenuUB" runat="server">     
+<asp:Panel ID="pnlMenuC" runat="server">
+<div class="col-md-12" id="sections">
+    <ul id="ul-sections">
+        <div class="btn-group il-section">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Inicio <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="li-a" href="PublicacionesUB.aspx">Noticias</a></li>
+            </ul>
+        </div>
+        <div class="btn-group il-section">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Usuario <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="li-a" href="PublicacionesUB_Formulario.aspx">Subir Noticia</a></li>
+            </ul>
+        </div>
+        <div class="btn-group il-section">
+            <button  type="button"  class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Administrador <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <%--  <li><a ID="ProfesoresTag" runat="server" href='#'>Administración</a></li>--%>
+                <li><a ID="ProfesoresTag" runat="server" class="li-a" href="PublicacionesUB_Admin.aspx">Gestionar Noticias</a></li>
+            </ul>
+        </div>
+    </ul>
+</div>
+
+</asp:Panel>
+</asp:Panel>
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+</asp:ContentPlaceHolder>
+
+</form>
+
+<script src="Scripts/jquery-1.9.1.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>

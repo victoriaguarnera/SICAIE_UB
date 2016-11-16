@@ -1,0 +1,25 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SICAIE_General.master.vb" Inherits="SICAIE_SYS.SICAIE_General" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,700' rel='stylesheet' type='text/css'/>
+
+<LINK href="css/style.css" type="text/css" rel="stylesheet"/>
+<LINK href="css/EstilosUB.css" type="text/css" rel="stylesheet"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

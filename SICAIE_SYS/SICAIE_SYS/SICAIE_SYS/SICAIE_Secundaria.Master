@@ -1,0 +1,50 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SICAIE_Secundaria.master.vb" Inherits="SICAIE_SYS.SICAIE_Secundaria" %>
+
+<!DOCTYPE html/>
+ 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%--<head id="Head2"><meta http-equiv="X-UA-Compatible" content="IE=edge" /> --%>
+<head id="Head1" runat="server">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sicaie-ub.css">
+    <title>Universidad de Belgrano</title>
+    <script>
+        function signOut() {
+            var baseURL = '<%=HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>';
+            var Page = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=" + baseURL + "Login.aspx";
+            document.location.href = Page;
+            return false;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body  id="BodyPage" runat="server" style="">
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="login.aspx">
+                        <img id="logoUB" src="Imagenes/LOGOUB.png">
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <asp:Panel ID="pnlMenuUB" runat="server">
+            <asp:Panel ID="pnlMenuC" runat="server">
+            </asp:Panel>    
+	    </asp:Panel>
+        <div>
+            <div>
+                <br>
+                <div>
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" ></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
